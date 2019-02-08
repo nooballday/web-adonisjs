@@ -1,0 +1,25 @@
+@layout('layouts.main')
+
+@section('title')
+Dev-Blog
+@endsection
+
+@section('content')
+<div class="row">
+    <div class="col-lg-9 col-sm-12 main-content">
+        @each(data in news)
+        <div class="card shadow mb-3 bg-white rounded">
+            <img class="card-img-top" src="{{data.urlToImage}}"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><a href="{{data.url}}">{{ data.title }}</a></h5>
+                <p class="card-text">{{data.description}}</p>
+            </div>
+        </div>
+        @endeach
+    </div>
+    <div class="col-3 side-content">
+        test
+    </div>
+</div>
+@endsection
